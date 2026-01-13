@@ -237,12 +237,15 @@ def parse_combined(request: NLPRequest):
 def ask_question(request: NLPRequest):
     """
     Endpoint para preguntas generales sobre diabetes, alimentación, ejercicio y síntomas
-    Busca respuestas en la base de datos médica
+    Busca respuestas en la base de datos médica de 87,000+ registros
     
     Ejemplos:
     - "qué síntomas tiene la diabetes?"
     - "qué alimentos puedo comer?"
     - "cuánto ejercicio debo hacer?"
+    - "qué medicamentos existen?"
+    - "qué es la hipoglucemia?"
+    - "cuáles son las complicaciones?"
     """
     try:
         query = request.description
@@ -252,12 +255,21 @@ def ask_question(request: NLPRequest):
         
         # Determinar el tipo de pregunta
         question_type = "general"
-        if any(word in query.lower() for word in ['síntoma', 'señal', 'signo']):
+        if any(word in query.lower() for word in ['síntoma', 'señal', 'signo', 'complicación']):
             question_type = "síntomas"
-        elif any(word in query.lower() for word in ['comida', 'alimento', 'comer', 'puedo']):
+        elif any(word in query.lower() for word in ['comida', 'alimento', 'comer', 'puedo', 'nutrición']):
             question_type = "alimentación"
-        elif any(word in query.lower() for word in ['ejercicio', 'deporte', 'actividad', 'física']):
+        elif any(word in query.lower() for word in ['ejercicio', 'deporte', 'actividad', 'física', 'entrenar']):
             question_type = "ejercicio"
+        elif any(word in query.lower() for word in ['medicamento', 'insulina', 'droga', 'fármaco']):
+            question_type = "medicamentos"
+        elif any(word in query.lower() for word in ['glucosa', 'azúcar', 'monitoreo', 'medición']):
+            question_type = "monitoreo"
+        elif any(word in query.lower() for word in ['tipo', 'tipo1', 'tipo2', 'gestacional', 'prediabetes']):
+            question_type = "tipos"
+        
+        # Obtener tópicos relacionados para sugerencias
+        related_topics = knowledge_base.get_related_topics(query)
         
         return {
             "success": True,
@@ -266,6 +278,7 @@ def ask_question(request: NLPRequest):
             "answer": result['answer'],
             "confidence": float(result['confidence']),
             "source": result['source'],
+            "related_topics": related_topics[:3],
             "message": "Respuesta basada en base de datos médica"
         }
     except Exception as e:
@@ -274,6 +287,19 @@ def ask_question(request: NLPRequest):
             "error": str(e),
             "message": "Error al procesar pregunta"
         }
+
+@app.get("/diabetes-topics")
+def get_available_topics():
+    """
+    Retorna todos los tópicos disponibles sobre diabetes
+    """
+    topics = list(knowledge_base.DIABETES_KNOWLEDGE.keys())
+    return {
+        "success": True,
+        "total_topics": len(topics),
+        "topics": topics,
+        "message": "Puedes hacer preguntas sobre cualquiera de estos tópicos"
+    }
 
 @app.get("/")
 def read_root():

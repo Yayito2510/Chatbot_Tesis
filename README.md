@@ -1,13 +1,26 @@
-# 🤖 Chatbot Diabetes - Predictor de Dosis de Insulina
+# 🤖 Chatbot Diabetes - Asistente Inteligente
 
 ## Descripción
 
-Un **chatbot impulsado por IA** que predice dosis de insulina basándose en hábitos del usuario como:
-- 🏃 Ejercicio diario
-- 🍽️ Consumo de carbohidratos, proteína y grasas
-- 🩸 Nivel de glucosa en sangre
+Un **chatbot conversacional impulsado por IA** que combina dos funcionalidades poderosas:
 
-Utiliza un **modelo Machine Learning entrenado** con datos médicos reales para proporcionar predicciones precisas (R² = 0.9993).
+### 1. 🔮 Predicción de Insulina
+Predice dosis de insulina basándose en:
+- 🏃 Ejercicio diario (minutos)
+- 🍽️ Consumo de carbohidratos, proteína y grasas
+- 🩸 Nivel de glucosa actual
+- 📊 Modelo ML con precisión R² = 0.9993
+
+### 2. 💬 Sistema QA Médico
+Responde a cualquier pregunta sobre diabetes:
+- 📋 Síntomas y complicaciones
+- 🥗 Recomendaciones de alimentos
+- 🏋️ Guías de ejercicio
+- 💊 Información de medicamentos
+- 📊 Monitoreo de glucosa
+- ⚠️ Y mucho más...
+
+**Base de conocimiento**: 87,645+ registros médicos
 
 ---
 
@@ -16,16 +29,20 @@ Utiliza un **modelo Machine Learning entrenado** con datos médicos reales para 
 ```
 Chatbot_Diabetes/
 ├── backend/
-│   ├── main.py                 # API FastAPI principal
-│   ├── train_model.py          # Script para entrenar modelo BioBERT
+│   ├── main.py                 # API FastAPI con endpoints
+│   ├── nlp_parser.py           # Procesamiento de lenguaje natural
+│   ├── qa_system.py            # Sistema de Q&A con 15+ tópicos
+│   ├── rag_system.py           # Integración RAG/UMLS/Vademecum
+│   ├── database.py             # Gestión de base de datos SQLite
+│   ├── train_model.py          # Entrenamiento de modelo Random Forest
 │   ├── requirements.txt        # Dependencias Python
-│   ├── models/                 # Modelos entrenados
+│   ├── models/                 # Modelos ML entrenados
 │   │   ├── insulin_model.pkl
 │   │   ├── scaler.pkl
 │   │   └── medical_knowledge.pkl
 │   └── data/
-│       ├── data_general.csv    # 47,603 registros médicos generales
-│       └── data_medical.csv    # 40,442 registros médicos específicos
+│       ├── data_general.csv    # 47,603 Q&A médicas generales
+│       └── data_medical.csv    # 40,442 diagnósticos/tratamientos
 │
 ├── frontend/
 │   ├── package.json
@@ -33,14 +50,16 @@ Chatbot_Diabetes/
 │   │   ├── App.js              # Componente principal
 │   │   ├── App.css
 │   │   └── components/
-│   │       ├── ChatBot.js      # Componente chatbot interactivo
-│   │       ├── UploadCSV.js    # Cargador de archivos CSV
+│   │       ├── ChatBot.js      # Chatbot conversacional
+│   │       ├── UploadCSV.js    # Cargador de datos
 │   │       └── styles/
 │   │           └── ChatBot.css
 │   └── public/
 │       └── index.html
 │
-└── README.md
+├── FEATURES.md                 # Documentación completa de características
+├── README.md                   # Este archivo
+└── QUICK_START.md              # Guía de inicio rápido
 ```
 
 ---

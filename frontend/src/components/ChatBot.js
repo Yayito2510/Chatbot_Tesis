@@ -5,7 +5,7 @@ function ChatBot() {
   const [messages, setMessages] = useState([
     { 
       id: 1, 
-      text: "¡Hola! Bienvenido al asistente de diabetes.\n\nAntes de comenzar, ¿cual es tu nombre?", 
+      text: "¡Hola! Bienvenido al Asistente de Diabetes 🏥\n\nSoy un chatbot diseñado para ayudarte con:\n✓ Predicciones de dosis de insulina\n✓ Preguntas sobre síntomas y complicaciones\n✓ Recomendaciones de alimentos\n✓ Guías de ejercicio\n✓ Información sobre medicamentos\n✓ Monitoreo de glucosa\n\n¿Cuál es tu nombre?", 
       sender: "bot" 
     }
   ]);
@@ -74,7 +74,7 @@ function ChatBot() {
         newStep = 1;
       } else {
         setPatientAge(age);
-        botResponse = `Perfecto! Tienes ${age} anos. Ahora cuéntame sobre tu día.\n\nEjemplo: 'Hice 20 min de ejercicio, comí pan y mi glucosa es 95'\n\nTambién puedo responder preguntas: '¿Qué alimentos puedo comer?' o '¿Cuáles son los síntomas?'`;
+        botResponse = `¡Perfecto, ${patientName}! Tienes ${age} años.\n\nPuedo ayudarte de dos formas:\n\n1️⃣ PREDICCIÓN DE INSULINA: Cuéntame tu actividad\nEjemplo: 'Hice 30 min de ejercicio, comí pan, glucosa 150'\n\n2️⃣ PREGUNTAS MÉDICAS: Pregúntame lo que quieras\nEjemplo: '¿Qué síntomas tiene la diabetes?' o '¿Qué alimentos puedo comer?'\n\n¿Qué necesitas?`;
         newStep = 2;
       }
     }
