@@ -50,3 +50,11 @@ build/
 
 # Models
 models/
+
+# Archivos CSV grandes (> 50MB)
+backend/data/ChatDoctor_HealthCareMagic_train.csv
+backend/data/medicine_qa_diabetes_train.csv
+backend/data/*.csv
+!backend/data/data_general.csv
+!backend/data/data_medical.csv
+

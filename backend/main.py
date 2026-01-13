@@ -301,6 +301,32 @@ def get_available_topics():
         "message": "Puedes hacer preguntas sobre cualquiera de estos tópicos"
     }
 
+@app.get("/corpus-stats")
+def get_corpus_statistics():
+    """
+    Retorna estadísticas del corpus integrado
+    """
+    try:
+        from corpus_integration import integrated_corpus
+        
+        stats = integrated_corpus.get_statistics()
+        breakdown = integrated_corpus.get_source_breakdown()
+        
+        return {
+            "success": True,
+            "corpus_total": stats['total_records'],
+            "sources": breakdown,
+            "unique_sources": stats['unique_sources'],
+            "loaded_files": stats['loaded_files'],
+            "message": f"Corpus integrado con {stats['total_records']:,} registros de {stats['unique_sources']} fuentes"
+        }
+    except Exception as e:
+        return {
+            "success": False,
+            "error": str(e),
+            "message": "Error al obtener estadísticas del corpus"
+        }
+
 @app.get("/")
 def read_root():
     return {

@@ -1,12 +1,20 @@
 """
 Módulo QA (Question Answering) mejorado para preguntas sobre diabetes
-Proporciona respuestas completas sobre síntomas, alimentos, medicamentos, ejercicio, etc.
+Integra múltiples corpus médicos y proporciona respuestas de alta calidad
 """
 
 import pandas as pd
 import os
 from typing import List, Dict, Tuple
 from difflib import SequenceMatcher
+
+# Importar corpus integrado
+try:
+    from corpus_integration import integrated_corpus
+    CORPUS_AVAILABLE = True
+except Exception as e:
+    print(f"[WARN] No se pudo cargar corpus integrado: {e}")
+    CORPUS_AVAILABLE = False
 
 class DiabetesKnowledgeBase:
     """Base de conocimiento completa para diabetes"""
@@ -234,16 +242,16 @@ class DiabetesKnowledgeBase:
         best_source = 'unknown'
         best_score = 0.0
         
-        # Estrategia 0: Detectar tipo de pregunta en base de conocimiento
+        # Estrategia 0: Detectar tipo de pregunta en base de conocimiento local
         for topic, info in self.DIABETES_KNOWLEDGE.items():
             keywords = topic.split('_')
             if any(keyword in query_lower for keyword in keywords):
                 best_answer = self._format_answer(info)
-                best_source = 'builtin'
-                best_score = 0.9
+                best_source = 'builtin_local'
+                best_score = 0.95
                 break
         
-        if best_answer and best_source == 'builtin':
+        if best_answer and best_source == 'builtin_local':
             return {
                 'found': True,
                 'answer': best_answer,
@@ -252,7 +260,17 @@ class DiabetesKnowledgeBase:
                 'question_type': 'diabetes'
             }
         
-        # Estrategia 1: Buscar en datos generales por similitud
+        # Estrategia 1: Buscar en corpus integrado
+        if CORPUS_AVAILABLE and best_score < 0.8:
+            corpus_results = integrated_corpus.search(query, threshold=threshold, top_k=3)
+            
+            if corpus_results:
+                best_result = corpus_results[0]
+                best_answer = best_result['answer']
+                best_source = f"corpus_{best_result['source']}"
+                best_score = best_result['similarity']
+        
+        # Estrategia 2: Búsqueda en datos generales por similitud
         if self.general_data is not None and best_score < 0.8:
             for idx, row in self.general_data.iterrows():
                 try:
@@ -269,7 +287,7 @@ class DiabetesKnowledgeBase:
                 except:
                     pass
         
-        # Estrategia 2: Búsqueda por palabras clave en tags
+        # Estrategia 3: Búsqueda por palabras clave en tags
         if best_score < 0.6 and self.general_data is not None:
             diabetes_keywords = ['diabetes', 'glucosa', 'insulina', 'azúcar', 'alimento', 
                                'comida', 'ejercicio', 'síntoma', 'medicamento', 'dieta']
@@ -289,7 +307,7 @@ class DiabetesKnowledgeBase:
                     if best_answer:
                         break
         
-        # Estrategia 3: Buscar en datos médicos
+        # Estrategia 4: Buscar en datos médicos
         if self.medical_data is not None and best_score < 0.7:
             for idx, row in self.medical_data.iterrows():
                 try:

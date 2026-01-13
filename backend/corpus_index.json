@@ -1,0 +1,179 @@
+{
+  "metadata": {
+    "total_records": 254427,
+    "sources": {
+      "general": {
+        "filename": "data_general.csv",
+        "records": 47603,
+        "columns": [
+          "short_question",
+          "short_answer",
+          "tags",
+          "label"
+        ]
+      },
+      "medical": {
+        "filename": "data_medical.csv",
+        "records": 40442,
+        "columns": [
+          "input",
+          "output"
+        ]
+      },
+      "healthcare": {
+        "filename": "ChatDoctor_HealthCareMagic_train.csv",
+        "records": 112165,
+        "columns": [
+          "instruction",
+          "input",
+          "output"
+        ]
+      },
+      "diabetes_qa": {
+        "filename": "DiabetesQA_train.csv",
+        "records": 100,
+        "columns": [
+          "idx",
+          "query",
+          "label"
+        ]
+      },
+      "diabetes_qa_v2": {
+        "filename": "diabetes_qa_train.csv",
+        "records": 1075,
+        "columns": [
+          "question",
+          "answer"
+        ]
+      },
+      "medicine_qa": {
+        "filename": "medicine_qa_diabetes_train.csv",
+        "records": 52758,
+        "columns": [
+          "Question",
+          "Reply"
+        ]
+      },
+      "generic_train": {
+        "filename": "train.csv",
+        "records": 284,
+        "columns": [
+          "question",
+          "context"
+        ]
+      }
+    },
+    "loaded_files": [
+      "data_general.csv",
+      "data_medical.csv",
+      "ChatDoctor_HealthCareMagic_train.csv",
+      "DiabetesQA_train.csv",
+      "diabetes_qa_train.csv",
+      "medicine_qa_diabetes_train.csv",
+      "train.csv"
+    ]
+  },
+  "total_entries": 254427,
+  "sample_queries": [
+    "can an antibiotic through an iv give you a rash a couple days later",
+    "can you test positive from having the hep b vaccine",
+    "what are the dietary restrictions for celiac disease gluten",
+    "can i transmit genital warts seventeen years after having them removed",
+    "is all vitamin d the same",
+    "i am a disabled veteran on medicare am i affected by the affordable care act",
+    "can taking multiple antibiotics cause redness and dryness of vagina",
+    "had a stroke on the brain in 2012 its 2016 i cant get no more than 5 hours of sleep a day",
+    "i have had a pneumonia shot can i get either a sinus infection or walking pneumonia from my 6 year old grand daughter  and can i be a carrier to others in my age group",
+    "ekg says there was “moderate right axis deviation ” “normal sinus rhythm with marked sinus arrythmia ”",
+    "my baby ate her on poop my baby ate poop 4 days later she is sick weezing coughing and high fever for 4days straight i took her to the doctor and they said shes fine just a normal cold i told them what happen and they just said she should be fine but if she still has a fever next week come back what should i do and is her symptoms related to her eating her poop",
+    "how to treat leiomyosarcoma and rectal cancer at the same time",
+    "i smoked cigs for 1 month averaging about 3 a day just wondering if any irreversible was done i did quit since then i started smoking for a month after a period of depression a couple of months ago 2 3 cigs most days with a couple more on bad days i would estimate i probably had 4 packs total over the period i went cold turkey as i started to get my life together and hated the ill feeling from them i exercise regularly and eat healthy and i am still young i would just like to clear my head and hear that i did no damage permanent to my lungs i know it takes a bit to recover hopefully to 100",
+    "i have persistent headache and i feel like i have lowgrade fever help  hi so i am a headache everyday it is not too bad though it is completely bearable but a little distracting and i have noticed that i have lowgrade fever most of the time or mostly everyday but just like the headache it is bearable i can not just shrug this feeling off this have been occurring for two or three months now i am hopefully going to the doctor in a few days and get myself checked",
+    "pain ring finger to the middle of arm before elbow for 45 days started after i held on to stop falling worse on lifting its not bad3 on 10 earlier it was more painful but now it does not hurt as much unless i type or write i have barely used my right hand for anything for the past month else the pain increases it starts hurting at one point about five fingers from my wrist but pain goes away completely if i press down on it it also hurts in the area below middle to pinkie i got an xray done already so nothing there shd i get an mri if so only for wrist or forearm also or shd anti inflammatories be enough thanks",
+    "where can i go for help for bipolar disorder",
+    "does prozac cause weight gain what about zoloft",
+    "what are the ingredients inibuprofen  i take a 600mg ibuprofen only as needed for nerve pain my question is what ingredients are in this medication i have a legal prescription for it",
+    "why am i hearing my heartbeat in my right ear  just recently i have started hearing my heartbeat in my right ear this came on suddenly i am a 66 year old female with no particular health issues what could be the cause of this anything to worry about",
+    "what weighs more muscle or fat  im just wondering about weight gain due to muscle growth my wife has been working out for some time with weights and cardio training but she is finding that her weight has been fluctuating and at times gains weight a little bit",
+    "okay so i am 16 and i want to grow about 3 more inches if i smoke hookah once or twice will i grow to my goal height",
+    "what is the treatment for the common cold",
+    "can you be allergic to mold in your food",
+    "can herpes be spread by bed bugs if a person infected with herpes is bitten by a bed bug can another person bitten by the same bug get infected with herpes",
+    "i have heavy pain in both side of my head that causes dizziness sometimes in my back and neck",
+    "can i sit in a sauna and steam room with a broken ankle",
+    "how effective are foam and male condoms in preventing pregnancy",
+    "can newborn babies be born addicted to prednisone if the mom took it for asthma in the last trimester",
+    "what is black measles when i was young i had them now in my fifties i have a lot of health problems could it be because of them and what damage do they do to your body i know they have not been heard of in god know how long is there any way to know after all of these years after having them to get information on them",
+    "my husband is taking 40 mg of prozac and is really depressed and has thought of suicide what do we do",
+    "is erythema multiforme an autoimmune disorder",
+    "why would a rn choose not to get her kids a flu shot as the grandparent is there anything i can do",
+    "i have been taking propranolol for the chest pains now have headaches and pain on left side of head and body",
+    "should i nap",
+    "pain when urinating inconsistent urination painfull ejaculation painfull mastrubation etc oh gosh im in all sort of trouble here and its given me anxiety over the past 1 5years ive been having this condition it all began when my urine penis started smelling cheesy after urination then later on when i was laying in bed and rising up i could feel from pelvic area like something is almost pushing my urine out it happened all the time then came premature ejaculation painfull urination painfull mastrubation painfull ejaculation also when i drag back my foreskin pain help please",
+    "is there evidence that statins increase life expectancy for people without heart disease",
+    "broken collarbone 3 5 cm overlap its been three weeks after break and still feels broken or loose",
+    "why do i feel lightheaded fatigued and sweat during sleeping no fever  i am an almost 37 yr old female with a lot of stress right now dr put me on effexor and i started not being able to sleep having bad headaches feeling lightheaded and constipated i took it for 2 weeks and he told me to stop when i called him he called me in something else but i am afraid to get it i have been on paxil prozac and celexa and never felt this horrible i have not taken anything in almost a week but feel lightheaded many times thoughout the day any ideas what could be wrong",
+    "i am experiencing a problem keeping an erection are there natural remedies that can be taken for this",
+    "i have been having very sharp stabbing pains down through the top rtrear of my head the pain almost knocks me down i have been having these pains for 6 7 weeks i have had no previous head injuries they just started out of the blue they are not headaches they are in  a dime sized spot on top of my head right side just off center back portion top of head does that make any sense these pains happen wether  i am standing or laying down thank you for your time",
+    "what are some warning signs for pregnant women when they are exercising",
+    "i need relief from chronic epididymitis",
+    "is it better for a type ii diabetic to eat corn or bread stuffing",
+    "how effective are male condoms at birth control",
+    "guest in my home has scabies do i have house sterilized or will a good cleaning do it we have not had skin contact he is getting treated and i am having a general cleaner come in this afternoon to change linens etc is this sufficient i have never had anything like this in my home somewhat disturbed",
+    "how soon should my 14 year old wait before returning to school having been diagnosed with pneumonia",
+    "can i have strep without fever  my 4 year old son was diagnosed with strep throat 3 days ago last night i was fine one minute and suddenly felt like i would been hit by a ton of bricks body aches headache  sore throat and general feeling crappy but no fever is there any point in dragging myself out to doctor when i feel so miserable is it possible to have strep without fever i do not have any runny nose stuffy nose or cough not a cold ",
+    "my period only last 36 48 hours which is my norm is that why i have had 2 yrs of no luck getting pregnant  my husband and i have been trying for two years to have a child i am turning 30 next month and in my family after 30 equals issues my normal period is only 36 48 hours could this be preventing me from getting pregnant",
+    "i was diagnosed with mononucleosis 7 months ago since then i have not been able to recover",
+    "will my glans burn recover  accidentally i got a very hot water on my penis the water hit a small area of glans and the area under it now rubbing it either by hand or cloths has some sort of annoying feeling i would like to know whether recovery is possible or not if yes please tell me how",
+    "i was curious about anal used mothers sex toy didnt clean it at risk for stds do not think it was used in a while i was curious and i found a vibrator and i used it i put a condom on it but condom broke i got tested for chlamidia and ghonorea both negative do you think i am at risk for hiv or anything else  also i used other sorta home made toys over a year ago and i just got worried i could have done damage to my body have not had any negative symptoms and havnt used them since last year should i be worried everything is normal and during use nothing negative happened like bleeding of anything",
+    "i take steroid prednisolone for ivfpregnancy due to auto immune issue but i have herpes 2 will this affect baby",
+    "what is the best moisturizer for older skin",
+    "what other than a yeast infection could it be if the medicine does not work and more symptoms start occuring  for a few months now i have had constant vaginal itching and burning and after using yeast infection medicine multiple times it still has not gone away and now blisters have begun forming after looking up genital herpes i have noticed that i have nearly all the symptoms for it but i have yet to have sexual activity could it still be possible or is it something else",
+    "spotting on day two of my period could i be pregnant i have had my loop taken out 71015 and have had unprotected sex a few times after that hoping to fall pregnant my period was meant to start 12102015 it now day two on my period and i have only been spotting which is very un usual could i be pregnant",
+    "why will not my penis stay hard when in pregame  i get hard quite easily when around my gf but then all of a sudden when it comes to me taking my jeans off it goes down why  when it does decide to work i really do love sex with her so what is causing this also i can not cum when she tries to give bj",
+    "i am pregant does everything i wear have to have cotton in it  my boyfriend is sure he read that now that i am pregnant everything i wear has to have at least a percentage of cotton in it i know that my panties should be cotton but i can not find answers about the rest of my wardrobe this is making it difficult to find suitable pants for my work uniform",
+    "is clindamycin effective in treating syphilis",
+    "my mother underwent an aortic aneurysm repair still has catheter my aunt died of septic poisoning due to a similar event",
+    "my son had dtap polio chicken pox and mmr vaccines now can barely move",
+    "could i possibly be pregnant  last period may 16th unprotected sex on june 9th supposed to start june 16th still have not if you think i am pregnant when should i take a test  side notes  feel as if i start but do not   i was throwing up at 2 am on saturday the 15th i was nauseous the rest of the day   light cramps  the guy i had sex with says he only has a 3 chance of getting someone pregnant  i have been tired lately i also have been having light heartburn i think  if anyone can help me it would be greatly appreciated",
+    "is liposuction covered by insurance",
+    "can you use egg whites on a burn  i read an article that said you can use egg whites to sooth and help heal burns like if you burn yourself with fire but not real bad is this true",
+    "inserting finger into girls vagina leads to pregnancy",
+    "how long should i wait before bringing my 11 yr old with flu symptoms to our family dr it has been 8 days initial symptoms were nausea high fever severe headache loss of appetite and fatigue those lasted about 2 days now she is very tired little appetite sore bellynausea and has a sore throat and cough",
+    "why does coffee give me such an energy boost",
+    "pregnant unprotected sex a week before period period came on time and heavy with bad cramps as usual reg 28 day 4 yrs i had unprotected sex a week before my period started he ejaculated awa from me but im worried a little bit may have got it before he pulled out my period came on the dot when it was supposed to get it and was heavy at first then to moderate with bad cramps like i normally have basically my period came on time and was normal in length flow and cramps my periods have been regular for years i do not know when i ovulate or my latueal phase what are my chances of being pregnant",
+    "what reactions are likely after an immunization",
+    "are diet pills safe for teenagers if so which ones are",
+    "i had sex in the 5th week of pregnancy and saw vaginal bleeding why",
+    "i have an acute dextroscoliosis i feel pain when i skip meals",
+    "would braces close wide gap between front teeth",
+    "i have been feeling extremely exhausted and unable to do basic tasks need advice",
+    "how is herpes simplex treated",
+    "what causes hives",
+    "i had ovarian cancer and reflux surgery i still deal with constant nausea i can barely eat and i am unable to live life and go anywhere",
+    "my period has been late by 4 days i am trying to conceive please help",
+    "my body has not been feeling good at all what can be wrong",
+    "my son is 7 and can swallow pills he is running a fever can i give him one 200 mg ibuprofen pill he weighs 53 pounds",
+    "how do you get hepatitis c",
+    "i was diagnosed with mononucleosis 7 months ago since then i have not been able to recover",
+    "i swallowed 20 tablets of 40mg citalopram whay should i do",
+    "my mom is in a depression…what can i do",
+    "does lidocaine cure canker sores on your throat  i found a small white sore on my throat and i was prescribed lidocaine and it numbs the pain but i was wondering if it cures it at the same time before it gets worse",
+    "i have got a wrist and palm injury in my right hand",
+    "is hand foot and mouth the same as rubella is hand foot nd mouth the same as rubella",
+    "i have started a low sugar and low wheat diet and i keep going to the toilet more than normal is my diet the reason",
+    "had total knee replacements i am not feeling good no energy depressed no appetite have lost weight",
+    "sleeping pills for traveling what should i take to sleep on the plane im traveling to israel from miami fl and am super scared of flying i would like to sleep on the plane so i dont get nerve recked whats safe to take that i can bring on the plane with me and that i will be able to wake up after my flight lands",
+    "i am on the pill and a condom was used pregnant  i have been on the pill for over 5 years i am pretty good with taking it on time but occasionally i will forget a day but immediately take it when i realize ive missed it last weekend saturday i was about an hour late taking my bc the next day i had sex he was wearing a condom a week later getting cramps and what not like a period i usually take the pills continuously but i am scared so i am going to let myself have a period hopefully i am about to start the sugar pills today",
+    "3 yr old son has small specks of blood on face after napping",
+    "had a transvaginal ultrasound done do not see fetal pole is it normal",
+    "why it is necessary to take 2 antibiotics for a diverticuilitis infection will taking just the cipro work",
+    "what is prolopa for parkinson is disease",
+    "for hand and mouth disease can the sores be on tongue",
+    "i manage a medical office with 3 employees  rather than offer a health insurance plan we pay 50 of the employees premium so if they purchase their insurance through the marketplace will we no longer be able to do that",
+    "i am kite surf instructor but have spine condition pain too much too handle",
+    "was skiing and fell on my knee cap now 3 days later i just heard a pop and its throbbing and its severe pain  they did an xray but they did not have an mri machine available i will not be able to access a doctor for another 3 9 days a half hour the pop happened and it really hurts on a scale of 1 10 10 being like you have just been shot its more of an 8 7",
+    "what can i do to gain back my missing pounds and feel healthy again  i have been sick and lost 17 pounds i am fatigued all the time and look poorly i want to gain my wieght back and feel good again as quickly as possible",
+    "gave boyfriend oral then ate an hour later got home and felt mucus in throat and spit it went down my body pregnant  gave my boyfriend oral and swallowed some then ate a small burger and some coke an hour later i took a shower while in the shower i felt then need to spit i felt like mucus so i did spit worried that spit contained sperm and traveled down my body and got me pregnant i did not insert anything in not even with fingers and i was obviously standing while in shower but spit went through middle of my stomach so i am sure it passed by my vagina i am only 19 help can i be pregnant"
+  ]
+}
