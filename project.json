@@ -1,0 +1,146 @@
+{
+  "name": "Chatbot-Diabetes-Predictor",
+  "version": "2.0.0",
+  "description": "Chatbot impulsado por IA para predecir dosis de insulina basado en BioBERT",
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/chatbot-diabetes"
+  },
+  "keywords": [
+    "diabetes",
+    "insulin",
+    "prediction",
+    "chatbot",
+    "machine-learning",
+    "biobert",
+    "healthcare",
+    "fastapi",
+    "react"
+  ],
+  "scripts": {
+    "backend": "cd backend && uvicorn main:app --port 5000 --reload",
+    "frontend": "cd frontend && npm start",
+    "train-model": "cd backend && python train_model.py",
+    "start": "concurrently \"npm run backend\" \"npm run frontend\""
+  },
+  "project_structure": {
+    "backend": {
+      "main.py": "API FastAPI principal con endpoints de predicción",
+      "train_model.py": "Script de entrenamiento del modelo ML",
+      "requirements.txt": "Dependencias Python",
+      "models": {
+        "insulin_model.pkl": "Modelo entrenado Random Forest",
+        "scaler.pkl": "Escalador de features",
+        "medical_knowledge.pkl": "Base de conocimiento médico"
+      },
+      "data": {
+        "data_general.csv": "47,603 Q&A médicas generales",
+        "data_medical.csv": "40,442 diagnóstico-tratamiento"
+      }
+    },
+    "frontend": {
+      "src": {
+        "App.js": "Componente principal",
+        "App.css": "Estilos de la app",
+        "components": {
+          "ChatBot.js": "Componente del chatbot interactivo",
+          "UploadCSV.js": "Cargador de archivos CSV",
+          "styles": {
+            "ChatBot.css": "Estilos del chatbot"
+          }
+        }
+      },
+      "public": {
+        "index.html": "HTML base",
+        "manifest.json": "Configuración PWA"
+      },
+      "package.json": "Dependencias NPM"
+    }
+  },
+  "features": {
+    "backend": [
+      "Modelo ML entrenado (R² = 0.9993)",
+      "Predicción de dosis de insulina",
+      "Análisis de factores de salud",
+      "API REST con FastAPI",
+      "Documentación Swagger automática",
+      "CORS habilitado",
+      "Manejo de errores robusto"
+    ],
+    "frontend": [
+      "Interfaz de chatbot interactivo",
+      "Conversación en tiempo real",
+      "Recolección de datos médicos",
+      "Visualización de predicciones",
+      "Diseño responsivo",
+      "Temas personalizados"
+    ]
+  },
+  "technologies": {
+    "backend": {
+      "FastAPI": "Framework web asincrónico",
+      "Uvicorn": "Servidor ASGI",
+      "scikit-learn": "Machine Learning",
+      "Pandas": "Análisis de datos",
+      "NumPy": "Computación numérica"
+    },
+    "frontend": {
+      "React": "Librería UI",
+      "React Scripts": "Build tools",
+      "CSS3": "Estilos avanzados"
+    }
+  },
+  "api_endpoints": {
+    "GET /": "Información general",
+    "GET /health": "Estado del sistema",
+    "GET /model-info": "Información del modelo",
+    "POST /predict": "Predecir dosis",
+    "POST /chat": "Interactuar con chatbot"
+  },
+  "model_details": {
+    "algorithm": "Random Forest Regressor",
+    "n_estimators": 200,
+    "max_depth": 15,
+    "training_samples": 800,
+    "r2_score": 0.9993,
+    "features": [
+      "Ejercicio (minutos)",
+      "Carbohidratos (gramos)",
+      "Proteína (gramos)",
+      "Grasas (gramos)",
+      "Glucosa (mg/dl)"
+    ],
+    "output_range": "2-25 unidades"
+  },
+  "system_requirements": {
+    "python": "3.8+",
+    "nodejs": "14+",
+    "memory": "4GB recomendado",
+    "disk": "2GB"
+  },
+  "ports": {
+    "backend": 5000,
+    "frontend": 3000
+  },
+  "environment_variables": {
+    "REACT_APP_API_URL": "http://localhost:5000"
+  },
+  "development": {
+    "dev_mode_backend": "uvicorn main:app --reload",
+    "dev_mode_frontend": "npm start",
+    "testing": "npm test",
+    "linting": "eslint src/"
+  },
+  "deployment": {
+    "backend": "Docker or Heroku or Railway",
+    "frontend": "Netlify or Vercel or GitHub Pages",
+    "database": "Optional - PostgreSQL or MongoDB"
+  },
+  "disclaimers": {
+    "medical": "No reemplaza consejo médico profesional",
+    "accuracy": "Predicciones basadas en datos históricos",
+    "liability": "Cada paciente debe consultar con su médico"
+  }
+}
